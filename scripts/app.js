@@ -75,8 +75,8 @@
       flower: '🌻',
       image: 'assets/photos/photo04.png',
       title: 'A Sunflower Memory',
-      body: '"that chocolate 🫠 (you know exactly which one)."',
-      tag: 'memory 04 • sweet moments'
+      body: '"how mesmerising it looks pure devotion"',
+      tag: 'memory 04 • pure devotion'
     }
   };
 
