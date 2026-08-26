@@ -54,14 +54,14 @@
       flower: '🌷',
       image: 'assets/photos/photo01.jpg',
       title: 'A Tulip Memory',
-      body: '"that random conversation that somehow lasted forever."',
-      tag: 'memory 01 • late night'
+      body: '"look how we are looking at each other"',
+      tag: 'memory 01 • city surfing'
     },
     2: {
       flower: '🌻',
       image: 'assets/photos/photo02.png',
       title: 'A Sunflower Memory',
-      body: '"that stupid thing we laughed about for 20 minutes straight."',
+      body: '"a truly joyful day where we both laughing."',
       tag: 'memory 02 • pure joy'
     },
     3: {

@@ -925,8 +925,30 @@
   padding: 2.8rem 2.2rem;
   transform: scale(0.9);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  max-height: 90vh;
+  max-height: 88vh;
   overflow-y: auto;
+  border-radius: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(224, 139, 136, 0.45) transparent;
+}
+
+/* Inset Scrollbar that never clips rounded corners */
+.modal-pop-scale::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-pop-scale::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 16px 0;
+}
+
+.modal-pop-scale::-webkit-scrollbar-thumb {
+  background: rgba(224, 139, 136, 0.45);
+  border-radius: 10px;
+}
+
+.modal-pop-scale::-webkit-scrollbar-thumb:hover {
+  background: rgba(194, 74, 88, 0.7);
 }
 
 .garden-memory-modal.active .modal-pop-scale,
