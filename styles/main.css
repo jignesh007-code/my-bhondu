@@ -1,0 +1,377 @@
+/* ==========================================================================
+   MAIN.CSS - Watercolor Botanical Stationery Aesthetic (Reference Inspired)
+   ========================================================================== */
+
+:root {
+  /* Blush Frame & Stationery Base */
+  --bg-frame-pink: #f7c5cf;
+  --bg-frame-pink-deep: #f2b4c1;
+  --bg-stationery: #FFFDF9;
+  --bg-stationery-card: #FFFFFF;
+  --bg-stationery-subtle: #FDF9F5;
+  --bg-note-yellow: #FEF9E7;
+  --bg-note-pink: #FDF0EE;
+  --bg-note-green: #F2F7F0;
+  --bg-note-blue: #F0F5FA;
+
+  /* Inks & Text (Deep Charcoal / Warm Dark Brown) */
+  --ink-primary: #261D1E;
+  --ink-body: #3D3334;
+  --ink-muted: #6B5D5E;
+  --ink-faint: #998B8C;
+
+  /* Watercolor Floral Accents */
+  --accent-blush-rose: #C24A58;
+  --accent-blush-soft: #FCDCD6;
+  --accent-sunflower-gold: #C2760E;
+  --accent-sunflower-soft: #FCE6B3;
+  --accent-sage-green: #4D6B48;
+  --accent-sage-soft: #D5E5D2;
+  --accent-indigo-berry: #3B5364;
+  --accent-gold-foil: #B88928;
+  --wax-seal-red: #A8423F;
+
+  /* Borders & Shadows */
+  --border-delicate: rgba(224, 187, 194, 0.55);
+  --border-paper: #EDE0DB;
+  --shadow-stationery: 0 16px 50px -6px rgba(184, 107, 126, 0.22), 0 4px 16px -2px rgba(45, 40, 37, 0.06);
+  --shadow-polaroid: 0 12px 32px -4px rgba(74, 52, 58, 0.12), 0 3px 8px -1px rgba(74, 52, 58, 0.06);
+  --shadow-card-hover: 0 18px 40px -4px rgba(184, 107, 126, 0.2), 0 6px 16px -2px rgba(45, 40, 37, 0.08);
+
+  /* Fonts */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-serif-alt: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-handwritten: 'Caveat', cursive, sans-serif;
+  --font-handwritten-alt: 'Kalam', cursive, sans-serif;
+
+  /* Layout Widths */
+  --container-max-width: 1140px;
+}
+
+/* --- Global Reset & Box Sizing --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Outer Viewport: Soft Pastel Blush with Vertical Stripes */
+body {
+  min-height: 100vh;
+  background-color: var(--bg-frame-pink);
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(255, 255, 255, 0.18) 80px,
+      rgba(255, 255, 255, 0.18) 160px
+    );
+  color: var(--ink-body);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.75;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body.envelope-active {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* --- Paper Grain Texture Overlay --- */
+.paper-texture-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* --- Ambient Floating Petals --- */
+.particles-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.petal-particle {
+  position: absolute;
+  width: 18px;
+  height: 24px;
+  background: url('../assets/images/petals.svg') no-repeat center / contain;
+  opacity: 0;
+  pointer-events: none;
+  animation: floatPetal 16s linear infinite;
+}
+
+@keyframes floatPetal {
+  0% {
+    transform: translateY(105vh) translateX(0) rotate(0deg) scale(0.7);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(60px) rotate(360deg) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* --- Reading Progress Bar --- */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  background: linear-gradient(90deg, #e88b88, #df8e1d);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* --- Main Stationery Canvas --- */
+.main-letter-content {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 3rem 1.5rem 8rem;
+  min-height: 100vh;
+}
+
+.main-letter-content.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scrapbook-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  background-color: var(--bg-stationery);
+  /* Subtle Horizontal Pastel Watercolor Bands */
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 70px,
+      rgba(247, 194, 207, 0.22) 70px,
+      rgba(247, 194, 207, 0.22) 140px
+    );
+  border-radius: 20px;
+  box-shadow: var(--shadow-stationery);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 4.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Asymmetrical Layout Grid Systems --- */
+.layout-3col {
+  display: grid;
+  grid-template-columns: 260px 1fr 260px;
+  gap: 2rem;
+  align-items: center;
+}
+
+.layout-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.layout-asymmetric-wide-left {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 2.75rem;
+  align-items: center;
+}
+
+.layout-asymmetric-wide-right {
+  display: grid;
+  grid-template-columns: 0.95fr 1.25fr;
+  gap: 2.75rem;
+  align-items: center;
+}
+
+/* --- Typography Helpers --- */
+h1, h2, h3, h4 {
+  color: var(--ink-primary);
+  line-height: 1.25;
+}
+
+.handwritten {
+  font-family: var(--font-handwritten);
+  font-size: 1.45rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-primary);
+}
+
+.serif-heading {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+.paragraph {
+  font-size: 1.08rem;
+  color: var(--ink-body);
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   PROMINENT WATERCOLOR BRUSHSTROKE & CRISP TOP-LAYER TEXT
+   ========================================================================== */
+.brushstroke-title-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  padding: 0.35rem 1.6rem;
+  isolation: isolate; /* Creates isolated stacking context */
+}
+
+.brushstroke-bg-blush,
+.brushstroke-bg-sage,
+.brushstroke-bg-peach {
+  position: absolute;
+  inset: -14% -16% -14% -16%;
+  width: calc(100% + 32%);
+  height: calc(100% + 28%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  pointer-events: none;
+  z-index: -1; /* STRICTLY in the background behind the text */
+  opacity: 0.92;
+  filter: drop-shadow(0 2px 6px rgba(184, 107, 126, 0.14));
+}
+
+.brushstroke-bg-blush { background-image: url('../assets/images/brushstroke-blush.svg'); }
+.brushstroke-bg-sage { background-image: url('../assets/images/brushstroke-sage.svg'); }
+.brushstroke-bg-peach { background-image: url('../assets/images/brushstroke-peach.svg'); }
+
+/* Text Layer STRICTLY on Top & 100% Crisp */
+.brushstroke-title-wrapper > * {
+  position: relative;
+  z-index: 2 !important;
+  color: var(--ink-primary);
+  text-shadow: none !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.brushstroke-title-wrapper .signature-title {
+  color: #2D1A1D;
+  font-weight: 700;
+  font-size: 2.3rem;
+}
+
+.brushstroke-title-wrapper h2,
+.brushstroke-title-wrapper h3 {
+  color: var(--ink-primary);
+  font-weight: 700;
+}
+
+.brushstroke-title-wrapper .handwritten-subtitle {
+  color: #381A1F; /* Deep crisp warm tone for maximum clarity and presence */
+  font-weight: 700;
+  font-size: 1.65rem;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* --- Gold Splatter Overlay Utility --- */
+.gold-splatter-accent {
+  position: absolute;
+  width: 140px;
+  height: 100px;
+  background-image: url('../assets/images/gold-splatter.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* --- Smooth Slow Clean Professional Pop Animation on Scroll --- */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 1.15s cubic-bezier(0.16, 1, 0.3, 1), transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-item.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* --- Accessibility & Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal-item {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .petal-particle {
+    display: none !important;
+  }
+}
+
+/* --- Responsive Reflow --- */
+@media (max-width: 1024px) {
+  .scrapbook-container {
+    padding: 3.5rem 2.2rem;
+    gap: 4.5rem;
+  }
+  .layout-3col,
+  .layout-split,
+  .layout-asymmetric-wide-left,
+  .layout-asymmetric-wide-right {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-letter-content {
+    padding: 1.5rem 0.6rem 6rem;
+  }
+  .scrapbook-container {
+    padding: 2.2rem 1.2rem;
+    gap: 3.5rem;
+    border-radius: 14px;
+  }
+}

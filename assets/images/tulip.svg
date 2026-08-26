@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tulipStem" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8ba082"/>
+      <stop offset="100%" stop-color="#697a62"/>
+    </linearGradient>
+    <linearGradient id="tulipPetalMain" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fcd8d2"/>
+      <stop offset="40%" stop-color="#f5ada0"/>
+      <stop offset="100%" stop-color="#e27e70"/>
+    </linearGradient>
+    <linearGradient id="tulipPetalSide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdece9"/>
+      <stop offset="60%" stop-color="#f8beb3"/>
+      <stop offset="100%" stop-color="#e6887a"/>
+    </linearGradient>
+    <linearGradient id="tulipLeafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9bb092"/>
+      <stop offset="100%" stop-color="#6c8065"/>
+    </linearGradient>
+    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#e27e70" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Stem -->
+  <path d="M 100 130 Q 98 210 102 290" fill="none" stroke="url(#tulipStem)" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Left Graceful Leaf -->
+  <path d="M 100 240 Q 60 190 68 140 Q 85 180 101 220 Z" fill="url(#tulipLeafGrad)" opacity="0.9"/>
+  <!-- Right Leaf -->
+  <path d="M 102 260 Q 140 210 132 165 Q 118 205 101 245 Z" fill="url(#tulipLeafGrad)" opacity="0.85"/>
+
+  <!-- Tulip Flower Group -->
+  <g filter="url(#softGlow)">
+    <!-- Back Petal Center -->
+    <path d="M 100 45 C 80 45, 75 95, 100 135 C 125 95, 120 45, 100 45 Z" fill="#d96e60" opacity="0.6"/>
+    
+    <!-- Left Petal -->
+    <path d="M 100 135 C 65 125, 55 70, 78 48 C 92 68, 96 100, 100 135 Z" fill="url(#tulipPetalSide)"/>
+    
+    <!-- Right Petal -->
+    <path d="M 100 135 C 135 125, 145 70, 122 48 C 108 68, 104 100, 100 135 Z" fill="url(#tulipPetalSide)"/>
+    
+    <!-- Front Center Petal -->
+    <path d="M 100 138 C 76 135, 72 75, 96 46 C 102 46, 128 75, 124 135 C 114 138, 108 138, 100 138 Z" fill="url(#tulipPetalMain)"/>
+
+    <!-- Subtle White / Highlight Sheen on Petal -->
+    <path d="M 96 52 Q 88 80 92 120" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
+  </g>
+</svg>

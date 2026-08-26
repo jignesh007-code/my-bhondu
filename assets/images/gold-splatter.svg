@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f8e5a3"/>
+      <stop offset="60%" stop-color="#dfb75c"/>
+      <stop offset="100%" stop-color="#b88928"/>
+    </radialGradient>
+  </defs>
+  <!-- Fine gold stardust / paint splatters -->
+  <g fill="url(#goldGlow)">
+    <circle cx="45" cy="40" r="3"/>
+    <circle cx="65" cy="25" r="1.5"/>
+    <circle cx="85" cy="55" r="2.2"/>
+    <circle cx="110" cy="35" r="4"/>
+    <circle cx="130" cy="65" r="1.8"/>
+    <circle cx="150" cy="30" r="2.5"/>
+    <circle cx="180" cy="50" r="3.5"/>
+    <circle cx="210" cy="28" r="2"/>
+    <circle cx="235" cy="60" r="3"/>
+    <circle cx="260" cy="42" r="1.5"/>
+    <circle cx="280" cy="70" r="2.8"/>
+    
+    <circle cx="30" cy="95" r="1.8"/>
+    <circle cx="55" cy="120" r="3.2"/>
+    <circle cx="90" cy="105" r="2"/>
+    <circle cx="120" cy="130" r="4.5"/>
+    <circle cx="145" cy="90" r="1.5"/>
+    <circle cx="170" cy="115" r="3"/>
+    <circle cx="205" cy="100" r="2.5"/>
+    <circle cx="230" cy="135" r="3.8"/>
+    <circle cx="255" cy="110" r="2.2"/>
+    <circle cx="275" cy="140" r="1.6"/>
+    
+    <circle cx="40" cy="165" r="2.5"/>
+    <circle cx="75" cy="155" r="3.5"/>
+    <circle cx="105" cy="175" r="1.8"/>
+    <circle cx="160" cy="160" r="4"/>
+    <circle cx="195" cy="180" r="2"/>
+    <circle cx="225" cy="165" r="3"/>
+    <circle cx="265" cy="170" r="2.2"/>
+  </g>
+</svg>

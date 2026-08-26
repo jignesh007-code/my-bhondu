@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="A personal digital garden and scrapbook letter for Bhondu.">
+  <meta name="theme-color" content="#f7c5cf">
+
+  <!-- OpenGraph Metadata for WhatsApp & Social Previews -->
+  <meta property="og:title" content="for Bhondu ♡">
+  <meta property="og:description" content="a quiet letter made just for you.">
+  <meta property="og:image" content="assets/images/tulip.svg">
+  <meta property="og:type" content="website">
+
+  <title>for Bhondu ♡</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/tulip.svg">
+
+  <!-- Google Fonts: Editorial Serif, Modern Sans, and Fluid Handwritten Signature Script -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Kalam:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/envelope.css">
+  <link rel="stylesheet" href="styles/scrapbook.css">
+  <link rel="stylesheet" href="styles/player.css">
+</head>
+<body class="envelope-active">
+
+  <!-- ====================================================================
+       BACKGROUND SYSTEM: PAPER GRAIN, CANVAS BURST & AMBIENT PETALS
+       ==================================================================== -->
+  <div class="paper-texture-overlay" aria-hidden="true"></div>
+  <canvas id="burst-canvas" class="burst-canvas" aria-hidden="true"></canvas>
+  <div class="particles-container" id="particles-container" aria-hidden="true"></div>
+
+  <!-- ====================================================================
+       1. OPENING WATERCOLOR BOTANICAL ENVELOPE EXPERIENCE
+       ==================================================================== -->
+  <section id="envelope-screen" class="envelope-screen" aria-label="Opening letter for Bhondu">
+    <div class="envelope-wrapper">
+      
+      <!-- Hero Blooming Tulip -->
+      <div class="opening-tulip-hero" aria-hidden="true">
+        <img src="assets/images/tulip.svg" alt="Pink Tulip" class="hero-tulip-img" />
+      </div>
+
+      <!-- 3D Envelope Container -->
+      <div class="envelope-card" id="envelope-card">
+        <div class="envelope-back"></div>
+        
+        <!-- Sliding Letter Inside -->
+        <div class="envelope-letter" id="envelope-letter">
+          <div class="letter-stamp">
+            <span class="stamp-icon">🌷</span>
+            <span class="stamp-date">a private letter</span>
+          </div>
+          <div class="letter-preview-content">
+            <span class="handwritten-mini">for Bhondu</span>
+            <p class="letter-peek-text">"made this little thing for you."</p>
+          </div>
+          <div class="letter-fold-line"></div>
+        </div>
+
+        <div class="envelope-left"></div>
+        <div class="envelope-right"></div>
+        <div class="envelope-bottom"></div>
+
+        <!-- Envelope Flap with Wax Seal -->
+        <div class="envelope-flap" id="envelope-flap">
+          <div class="wax-seal">
+            <span class="wax-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Envelope Details with Bhondu -->
+      <div class="envelope-details" id="envelope-details">
+        <h1 class="envelope-title">for Bhondu <span class="heart-symbol">♡</span></h1>
+        <p class="envelope-subtitle">made this little thing for you.</p>
+        <button type="button" class="btn-open-envelope" id="btn-open-envelope" aria-label="Open the letter">
+          <span class="btn-text">come in &rarr;</span>
+          <span class="btn-glow"></span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       MAIN STATIONERY CANVAS (FLOATING CARD WITH WATERCOLOR BANDS)
+       ==================================================================== -->
+  <main id="main-letter-content" class="main-letter-content" aria-hidden="true">
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress-bar" id="reading-progress" aria-hidden="true"></div>
+
+    <div class="scrapbook-container">
+
+      <!-- ================================================================
+           SECTION 1: "A QUIET PRELUDE" (EDITORIAL INTRO)
+           ================================================================ -->
+      <section class="scrapbook-section section-intro reveal-item section-pop-intro" id="section-intro" aria-label="A quiet note">
+        <div class="layout-asymmetric-wide-left intro-editorial-wrapper">
+          
+          <!-- Left: Big Editorial Typography with Blush Brushstroke -->
+          <div class="intro-headline-box">
+            <div class="gold-splatter-accent shimmer-stardust" style="top: -20px; left: -20px;"></div>
+            
+            <div class="brushstroke-title-wrapper">
+              <div class="brushstroke-bg-blush"></div>
+              <h2 class="signature-title handwritten">A Note for You</h2>
+            </div>
+            
+            <h3 class="editorial-giant-heading serif-heading">
+              okay...<br>
+              <span class="editorial-highlight">this time, no excuses.</span>
+            </h3>
+
+            <div class="editorial-rule"></div>
+            
+            <p class="editorial-sub-lead">
+              I owe you a proper, sincere sorry. Not in a hurried text, but a real, thoughtful one.
+            </p>
+          </div>
+
+          <!-- Right: Snapshot Note & Playful Annotation -->
+          <div class="editorial-side-snapshot paper-sheet-subtle reveal-item hover-tilt-card">
+            <div class="pin-mini wiggle-pin"></div>
+            <div class="corner-flower-art" aria-hidden="true">
+              <img src="assets/images/tulip.svg" alt="" class="corner-mini-tulip" />
+            </div>
+            <p class="handwritten editorial-quote-text">
+              "Yes, I'm actually being serious right now."
+            </p>
+            <div class="dont-run-pill">
+              <span class="doodle-arrow">⤵</span>
+              <span class="handwritten don-run-text">(don't run.)</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           SECTION 2: THE APOLOGY (PURE STATIONERY - UNFOLDING PAPER ELEVATION)
+           ================================================================ -->
+      <section class="scrapbook-section section-apology reveal-item section-pop-apology" id="section-apology" aria-label="The Apology">
+        <div class="layout-asymmetric-wide-left apology-master-wrapper">
+          
+          <!-- Main Apology Card -->
+          <div class="apology-card paper-sheet elevation-paper">
+            <div class="washi-tape tape-top-left"></div>
+            <div class="gold-splatter-accent" style="top: 10px; right: 10px;"></div>
+
+            <div class="brushstroke-title-wrapper">
+              <div class="brushstroke-bg-blush"></div>
+              <h2 class="section-heading serif-heading">I'm sorry.</h2>
+            </div>
+
+            <div class="apology-body-text">
+              <p class="paragraph lead-paragraph">
+                I shouldn't have shouted at you.<br>
+                <strong>Especially not in front of everyone.</strong>
+              </p>
+
+              <p class="paragraph">
+                You didn't deserve that.
+              </p>
+
+              <p class="paragraph emotional-callout">
+                I know saying sorry doesn't magically erase that moment. And I'm not going to sit here and make excuses for it.
+              </p>
+
+              <p class="paragraph">
+                I heard what you told me about why shouting hurts you so deeply. You grew up around arguments and yelling, and you made it clear that you don't want that kind of noise in your life now. I understand that now, and I respect it completely.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Side: Botanical Reflection Note Card (No photo) -->
+          <div class="apology-side-column paper-sheet-subtle reveal-item botanical-side-hover">
+            <div class="pin-mini wiggle-pin"></div>
+            <div class="apology-botanical-art">
+              <img src="assets/images/tulip.svg" alt="Watercolor Tulip" class="apology-tulip-svg sway-gentle-hover" />
+            </div>
+            <p class="handwritten apology-side-quote">
+              "no excuses this time.<br>listening first, always."
+            </p>
+            <span class="side-caption-subtle">honest accountability</span>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           SECTION 3: "WHAT I UNDERSTOOD" (BOTANICAL PATH)
+           ================================================================ -->
+      <section class="scrapbook-section section-path" id="section-path" aria-label="What I understood">
+        <div class="section-intro-text reveal-item">
+          <div class="brushstroke-title-wrapper">
+            <div class="brushstroke-bg-sage"></div>
+            <span class="handwritten-subtitle">what you taught me</span>
+          </div>
+          <h2 class="section-heading-serif">What I Understood</h2>
+          <p class="subtext-muted">the things that stayed with me after we spoke</p>
+        </div>
+
+        <div class="botanical-path-container">
+          <div class="path-line-svg-wrapper" aria-hidden="true">
+            <div class="path-vertical-vine"></div>
+          </div>
+
+          <!-- Path Item 1 (Tulip - Left) -->
+          <div class="path-node path-node-left reveal-item path-node-bloom">
+            <div class="path-flower-icon icon-bloom-rotate">
+              <img src="assets/images/tulip.svg" alt="Tulip" class="node-flower" />
+            </div>
+            <div class="path-card paper-sheet-subtle hover-lift-shadow">
+              <span class="node-num">01</span>
+              <h3 class="node-title serif-heading">"You shouldn't have to prove yourself every day."</h3>
+              <p class="node-text">You shouldn't have to fight or exhaust yourself just to make someone understand how you feel.</p>
+            </div>
+          </div>
+
+          <!-- Path Item 2 (Sunflower - Right) -->
+          <div class="path-node path-node-right reveal-item path-node-bloom">
+            <div class="path-flower-icon icon-bloom-rotate">
+              <img src="assets/images/sunflower.svg" alt="Sunflower" class="node-flower" />
+            </div>
+            <div class="path-card paper-sheet-subtle hover-lift-shadow">
+              <span class="node-num">02</span>
+              <h3 class="node-title serif-heading">"You don't have to suppress your emotions."</h3>
+              <p class="node-text">Be angry. Be sad. Have bad days. Tell me when I'm wrong without fearing that it'll push me away.</p>
+            </div>
+          </div>
+
+          <!-- Path Item 3 (Tulip - Left) -->
+          <div class="path-node path-node-left reveal-item path-node-bloom">
+            <div class="path-flower-icon icon-bloom-rotate">
+              <img src="assets/images/tulip.svg" alt="Tulip" class="node-flower" />
+            </div>
+            <div class="path-card paper-sheet-subtle hover-lift-shadow">
+              <span class="node-num">03</span>
+              <h3 class="node-title serif-heading">"If you're angry or hurt, tell me."</h3>
+              <p class="node-text">I'd rather face uncomfortable honesty with you than have you carry things silently inside.</p>
+            </div>
+          </div>
+
+          <!-- Path Item 4 (Sunflower - Right) -->
+          <div class="path-node path-node-right reveal-item path-node-bloom">
+            <div class="path-flower-icon icon-bloom-rotate">
+              <img src="assets/images/sunflower.svg" alt="Sunflower" class="node-flower" />
+            </div>
+            <div class="path-card paper-sheet-subtle hover-lift-shadow">
+              <span class="node-num">04</span>
+              <h3 class="node-title serif-heading">"You deserve to feel safe."</h3>
+              <p class="node-text">Especially around someone you're close to. Safety means calmness, respect, and zero shouting.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           SECTION 4: "YOU DON'T HAVE TO BE OKAY" (STARLIGHT TWINKLE)
+           ================================================================ -->
+      <section class="scrapbook-section section-safe-space reveal-item section-pop-night" id="section-safe-space" aria-label="You do not have to be okay all the time">
+        <div class="layout-asymmetric-wide-right night-letter-wrapper">
+          
+          <!-- Left Rail: Intimate Side Note -->
+          <aside class="rail-left night-side-note paper-sheet-subtle reveal-item">
+            <span class="night-star-icon twinkle-star">✨</span>
+            <h4 class="night-side-heading serif-heading">A quiet reminder</h4>
+            <p class="handwritten night-side-text">"You don't always have to be the strong one around here."</p>
+          </aside>
+
+          <!-- Main Stage: Safe Space Letter -->
+          <div class="safe-space-card paper-sheet glow-atmosphere">
+            <div class="washi-tape tape-diagonal-left"></div>
+
+            <div class="brushstroke-title-wrapper">
+              <div class="brushstroke-bg-sage"></div>
+              <h2 class="section-heading serif-heading">You don't have to be okay all the time.</h2>
+            </div>
+
+            <div class="safe-space-body">
+              <p class="paragraph lead-paragraph">
+                You don't always have to be the person who holds everything together.
+              </p>
+
+              <p class="paragraph">
+                You don't have to hide when you're overwhelmed, and you never have to pretend you're fine just because you worry people will get tired of you.
+              </p>
+
+              <div class="permission-pills-grid">
+                <div class="permission-pill hover-expand-pill"><span>If you're having a bad day, have a bad day.</span></div>
+                <div class="permission-pill hover-expand-pill"><span>If you need space, take it.</span></div>
+                <div class="permission-pill hover-expand-pill"><span>If you want to talk, talk.</span></div>
+                <div class="permission-pill hover-expand-pill"><span>If you don't know what you're feeling, that's okay too.</span></div>
+              </div>
+
+              <div class="reassurance-highlight pulsing-reassurance">
+                <p class="reassurance-quote serif-heading">
+                  "I don't need a perfectly okay version of you.<br>
+                  I just want the real one."
+                </p>
+              </div>
+
+              <p class="paragraph footer-clarity">
+                I don't want you to become someone else for me. I just want us to be able to talk about difficult things without ever making each other feel unwanted.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           SECTION 5: "YOU'RE MORE IMPORTANT TO ME" (VISUAL DIARY)
+           ================================================================ -->
+      <section class="scrapbook-section section-importance reveal-item section-pop-diary" id="section-importance" aria-label="Your importance to me">
+        <div class="layout-3col diary-master-wrapper">
+          
+          <!-- Left Rail: Side Memory Snippet -->
+          <aside class="rail-left diary-side-card paper-sheet-subtle reveal-item hover-tilt-card">
+            <div class="stamp-accent-mini">DAILY LIFE</div>
+            <p class="handwritten diary-side-text">"You became part of my days without me even noticing when it started."</p>
+            <div class="side-leaf-doodle sway-leaf">🌿</div>
+          </aside>
+
+          <!-- Center Stage: Deep Personal Reflection -->
+          <div class="rail-center importance-card paper-sheet">
+            <div class="washi-tape tape-top-center"></div>
+
+            <div class="brushstroke-title-wrapper">
+              <div class="brushstroke-bg-peach"></div>
+              <h2 class="section-heading-alt">You're more important to me than I probably show.</h2>
+            </div>
+
+            <div class="importance-content">
+              <p class="paragraph">
+                At the end of the day, you're not just someone I talk to. You're one of those people whose presence started becoming part of my everyday life without me even realizing it.
+              </p>
+
+              <p class="paragraph quiet-depth">
+                I notice when you don't smile now or feel excited when we meet in morning. I notice when you talk less. Not because I'm trying to monitor you... it's just because I care about you enough to notice.and it also effect me.
+              </p>
+
+              <p class="paragraph">
+                I know sometimes my efforts might not look like much from your side. But even when I was having really difficult, exhausting days myself, I still wanted to show up for you.
+              </p>
+
+              <div class="my-side-statement">
+                <p class="statement-text handwritten">
+                  "I never did those things expecting a scoreboard or because I had to.<br>
+                  I did them because caring about you became completely natural to me."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Rail: Memory Tags with Timestamps -->
+          <aside class="rail-right memory-objects-rail reveal-item">
+            <div class="memory-obj-tag slide-tag-1">
+              <span class="obj-dot">🌙</span>
+              <div class="obj-content">
+                <span class="obj-time">my last message of the day</span>
+                <span class="obj-text">late night conversations</span>
+              </div>
+            </div>
+            <div class="memory-obj-tag slide-tag-2">
+              <span class="obj-dot">✨</span>
+              <div class="obj-content">
+                <span class="obj-time">my first text of the day</span>
+                <span class="obj-text">good morning messages</span>
+              </div>
+            </div>
+            <div class="memory-obj-tag slide-tag-3">
+              <span class="obj-dot">📷</span>
+              <div class="obj-content">
+                <span class="obj-time">candid</span>
+                <span class="obj-text">taking your photos</span>
+              </div>
+            </div>
+            <div class="memory-obj-tag slide-tag-4">
+              <span class="obj-dot">🍫</span>
+              <div class="obj-content">
+                <span class="obj-time">surprise</span>
+                <span class="obj-text">my spiderman cover</span>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           SECTION 6: "THINGS I APPRECIATE ABOUT YOU" (PINNED THOUGHT-BOARD)
+           ================================================================ -->
+      <section class="scrapbook-section section-appreciate" id="section-appreciate" aria-label="Things I appreciate about you">
+        <div class="section-intro-text reveal-item">
+          <div class="brushstroke-title-wrapper">
+            <div class="brushstroke-bg-blush"></div>
+            <span class="handwritten-subtitle">the real reasons</span>
+          </div>
+          <h2 class="section-heading-serif">Things I Genuinely Appreciate About You</h2>
+          <p class="subtext-muted">not generic compliments — just the honest things I notice</p>
+        </div>
+
+        <div class="appreciate-pinned-board" id="magnetic-pin-board">
+          
+          <div class="pinned-note pin-yellow note-pos-1 reveal-item magnetic-card" data-tilt="4">
+            <div class="pin-mini wiggle-pin"></div>
+            <span class="note-flower-doodle">🌷</span>
+            <p class="pinned-text">"I love how much you genuinely care about the people you love."</p>
+          </div>
+
+          <div class="pinned-note pin-white note-pos-2 reveal-item magnetic-card" data-tilt="-3">
+            <div class="tape-mini"></div>
+            <span class="note-flower-doodle">🌻</span>
+            <p class="pinned-text">"I love how even when you're exhausted, some part of you still worries about everyone else."</p>
+          </div>
+
+          <div class="pinned-note pin-pink note-pos-3 reveal-item magnetic-card" data-tilt="3">
+            <div class="pin-mini wiggle-pin"></div>
+            <span class="note-flower-doodle">🌷</span>
+            <p class="pinned-text">"I love your random dramatic reactions — they make even ordinary days funny."</p>
+          </div>
+
+          <div class="pinned-note pin-white note-pos-4 reveal-item magnetic-card" data-tilt="-4">
+            <div class="tape-mini-gold"></div>
+            <span class="note-flower-doodle">🌻</span>
+            <p class="pinned-text">"I love the completely stupid conversations that somehow become the best part of my day."</p>
+          </div>
+
+          <div class="pinned-note pin-green note-pos-5 reveal-item magnetic-card" data-tilt="2">
+            <div class="pin-mini wiggle-pin"></div>
+            <span class="note-flower-doodle">🌷</span>
+            <p class="pinned-text">"I love that you notice the little things that most people casually walk past."</p>
+          </div>
+
+          <div class="pinned-note pin-pink note-pos-6 reveal-item magnetic-card" data-tilt="-2">
+            <div class="tape-mini"></div>
+            <span class="note-flower-doodle">🌻</span>
+            <p class="pinned-text">"I love the version of you that laughs uncontrollably at silly things."</p>
+          </div>
+
+          <div class="pinned-note pin-yellow card-span-2 note-pos-7 reveal-item magnetic-card" data-tilt="0">
+            <div class="tape-mini-gold"></div>
+            <span class="note-flower-doodle">🤍</span>
+            <p class="pinned-text lead-pinned">"I love that you're not always easy to understand, but you're so deeply worth understanding."</p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           SECTION 7: "A LITTLE GARDEN OF SHARED MOMENTS"
+           (3D FLIP POLAROIDS & MOBILE SWIPEABLE CAROUSEL)
+           ================================================================ -->
+      <section class="scrapbook-section section-memory-garden" id="section-memory-garden" aria-label="A Little Garden of Shared Moments">
+        <div class="section-intro-text reveal-item">
+          <div class="brushstroke-title-wrapper">
+            <div class="brushstroke-bg-sage"></div>
+            <span class="handwritten-subtitle">our memories</span>
+          </div>
+          <h2 class="section-heading-serif">A Little Garden of Shared Moments</h2>
+          <p class="subtext-muted">candid memories — hover to flip, tap to open</p>
+        </div>
+
+        <!-- 4 Double-Sided 3D Flip Polaroids (Mobile Carousel) -->
+        <div class="garden-photos-gallery reveal-item" id="garden-photos-gallery">
+          
+          <!-- Photo 01 Flip Card -->
+          <div class="garden-photo-flip-card polaroid-tilt-left" data-memory-id="1">
+            <div class="polaroid-flip-inner">
+              
+              <!-- Front Side -->
+              <div class="polaroid-flip-front">
+                <div class="washi-tape tape-photo-top"></div>
+                <div class="polaroid-frame">
+                  <div class="polaroid-image-container">
+                    <img 
+                      src="assets/photos/photo01.jpg" 
+                      alt="Shared memory 1" 
+                      class="polaroid-img" 
+                      loading="lazy"
+                      onerror="this.onerror=null; this.src='assets/photos/photo01.svg';"
+                    />
+                  </div>
+                  <div class="polaroid-caption">
+                    <span class="handwritten-caption">a cute eye contect ✨</span>
+                    <span class="caption-date">hover to flip • tap to read</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Back Side -->
+              <div class="polaroid-flip-back">
+                <div class="tape-mini-gold"></div>
+                <div class="back-card-content">
+                  <span class="back-flower-icon">🌷</span>
+                  <p class="handwritten back-note-text">"that day is vary close to me(ignore the hiars😅)."</p>
+                  <span class="back-tap-prompt">tap to open story &rarr;</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Photo 02 Flip Card -->
+          <div class="garden-photo-flip-card polaroid-tilt-right" data-memory-id="2">
+            <div class="polaroid-flip-inner">
+              
+              <!-- Front Side -->
+              <div class="polaroid-flip-front">
+                <div class="washi-tape tape-photo-top"></div>
+                <div class="polaroid-frame">
+                  <div class="polaroid-image-container">
+                    <img 
+                      src="assets/photos/photo02.png" 
+                      alt="Shared memory 2" 
+                      class="polaroid-img" 
+                      loading="lazy"
+                      onerror="this.onerror=null; this.src='assets/photos/photo02.svg';"
+                    />
+                  </div>
+                  <div class="polaroid-caption">
+                    <span class="handwritten-caption">random laughs ✨</span>
+                    <span class="caption-date">hover to flip • tap to read</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Back Side -->
+              <div class="polaroid-flip-back">
+                <div class="tape-mini-gold"></div>
+                <div class="back-card-content">
+                  <span class="back-flower-icon">🌻</span>
+                  <p class="handwritten back-note-text">" I really wanted to recreate this photo ."</p>
+                  <span class="back-tap-prompt">tap to open story &rarr;</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Photo 03 Flip Card -->
+          <div class="garden-photo-flip-card polaroid-tilt-left" data-memory-id="3">
+            <div class="polaroid-flip-inner">
+              
+              <!-- Front Side -->
+              <div class="polaroid-flip-front">
+                <div class="washi-tape tape-photo-top"></div>
+                <div class="polaroid-frame">
+                  <div class="polaroid-image-container">
+                    <img 
+                      src="assets/photos/photo03.jpg" 
+                      alt="Shared memory 3" 
+                      class="polaroid-img" 
+                      loading="lazy"
+                      onerror="this.onerror=null; this.src='assets/photos/photo01.svg';"
+                    />
+                  </div>
+                  <div class="polaroid-caption">
+                    <span class="handwritten-caption">quiet moments 🌷</span>
+                    <span class="caption-date">hover to flip • tap to read</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Back Side -->
+              <div class="polaroid-flip-back">
+                <div class="tape-mini-gold"></div>
+                <div class="back-card-content">
+                  <span class="back-flower-icon">🌷</span>
+                  <p class="handwritten back-note-text">"one of those quiet moments when everything felt calm."</p>
+                  <span class="back-tap-prompt">tap to open story &rarr;</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Photo 04 Flip Card -->
+          <div class="garden-photo-flip-card polaroid-tilt-right" data-memory-id="4">
+            <div class="polaroid-flip-inner">
+              
+              <!-- Front Side -->
+              <div class="polaroid-flip-front">
+                <div class="washi-tape tape-photo-top"></div>
+                <div class="polaroid-frame">
+                  <div class="polaroid-image-container">
+                    <img 
+                      src="assets/photos/photo04.png" 
+                      alt="Shared memory 4" 
+                      class="polaroid-img" 
+                      loading="lazy"
+                      onerror="this.onerror=null; this.src='assets/photos/photo02.svg';"
+                    />
+                  </div>
+                  <div class="polaroid-caption">
+                    <span class="handwritten-caption">my favorite 🥹</span>
+                    <span class="caption-date">hover to flip • tap to read</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Back Side -->
+              <div class="polaroid-flip-back">
+                <div class="tape-mini-gold"></div>
+                <div class="back-card-content">
+                  <span class="back-flower-icon">🌻</span>
+                  <p class="handwritten back-note-text">"i love how calm you look in this photo like a fairy🧚."</p>
+                  <span class="back-tap-prompt">tap to open story &rarr;</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mobile Carousel Pagination Dots -->
+        <div class="gallery-dots-indicator" id="gallery-dots" aria-hidden="true">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+          <span class="dot" data-index="3"></span>
+        </div>
+
+        <!-- Pop-up Memory Modal Display -->
+        <div class="garden-memory-modal" id="garden-memory-modal" aria-hidden="true" role="dialog">
+          <div class="garden-modal-backdrop" id="garden-modal-backdrop"></div>
+          <div class="garden-modal-card paper-sheet modal-pop-scale">
+            <button type="button" class="btn-close-modal" id="btn-close-modal" aria-label="Close memory">✕</button>
+            <div class="modal-flower-header" id="modal-flower-icon">🌷</div>
+            <div class="modal-photo-container hidden" id="modal-photo-container">
+              <img src="" alt="Memory photo" class="modal-photo-img" id="modal-photo-img" />
+            </div>
+            <h3 class="modal-memory-title serif-heading" id="modal-memory-title">A Memory</h3>
+            <p class="modal-memory-body handwritten" id="modal-memory-body">Loading memory...</p>
+            <span class="modal-caption-tag" id="modal-caption-tag">treasured memory</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           SECTION 8: "I'M HUMAN TOO" & "NO HALF CONNECTIONS"
+           ================================================================ -->
+      <section class="scrapbook-section section-human-honest reveal-item" id="section-human-honest" aria-label="Honest vulnerability and mutual connection">
+        <div class="layout-split honest-split-container">
+          
+          <!-- Left Card: I'm Human Too -->
+          <div class="human-card paper-sheet hover-counter-tilt-left">
+            <div class="washi-tape tape-top-left"></div>
+            
+            <div class="brushstroke-title-wrapper">
+              <div class="brushstroke-bg-peach"></div>
+              <h2 class="section-heading-alt">At the end of the day...</h2>
+            </div>
+
+            <p class="paragraph lead-paragraph">
+              I'm just a boy too.
+            </p>
+            <p class="paragraph">
+              I might try to understand everything. I might try to stay calm and always show up. But I have feelings too. I get tired. I get hurt. I overthink. And sometimes, I just want to feel cared for too.
+            </p>
+            <p class="paragraph quiet-highlight">
+             i'll still be with you I don't want perfect. I just want you.
+            </p>
+          </div>
+
+          <!-- Right Card: No Half Connections -->
+          <div class="mutual-card paper-sheet hover-counter-tilt-right">
+            <div class="washi-tape tape-top-right"></div>
+            
+            <div class="brushstroke-title-wrapper">
+              <div class="brushstroke-bg-blush"></div>
+              <h2 class="section-heading-serif">So here's what I really want.</h2>
+            </div>
+            
+            <p class="paragraph">
+              I want something where both people choose each other.
+            </p>
+            
+            <p class="paragraph">
+              I don't want a half connection where one person is constantly trying while the other slowly pulls away.
+            </p>
+
+            <div class="mutual-clarity-box">
+              <ul class="clarity-list">
+                <li>If you need space, <em>take it.</em></li>
+                <li>If something hurts, <em>say it.</em></li>
+                <li>If you want me around, <em>let me know.</em></li>
+                <li>If you ever feel like you don't want this connection anymore, you can tell me honestly. I'll respect that.</li>
+              </ul>
+            </div>
+
+            <p class="paragraph closing-honest-note">
+              I just don't want to hurt you and if I did I'll regret it too<br>
+              <strong>I really hope we dont turn strangers.</strong>
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           SECTION 9: SMALL HAPPY THINGS (TACTILE PEELING MOSAIC)
+           ================================================================ -->
+      <section class="scrapbook-section section-little-things" id="section-little-things" aria-label="Small happy things">
+        <div class="section-intro-text reveal-item">
+          <div class="brushstroke-title-wrapper">
+            <div class="brushstroke-bg-blush"></div>
+            <span class="handwritten-subtitle">the little moments</span>
+          </div>
+          <h2 class="section-heading-serif">Pieces of Our Days</h2>
+          <p class="subtext-muted">the stupid, funny, everyday things that make me smile</p>
+        </div>
+
+        <div class="little-things-mosaic">
+          
+          <div class="mosaic-note note-1 reveal-item tactile-peel">
+            <div class="tape-mini"></div>
+            <p class="note-text handwritten">"the stupid conversations"</p>
+          </div>
+
+          <div class="mosaic-note note-2 reveal-item tactile-peel">
+            <div class="pin-mini wiggle-pin"></div>
+            <p class="note-text handwritten">"random laughs"</p>
+          </div>
+
+          <div class="mosaic-note note-3 reveal-item tactile-peel">
+            <div class="tape-mini"></div>
+            <p class="note-text handwritten">"morning smiles"</p>
+          </div>
+
+          <div class="mosaic-note note-4 reveal-item tactile-peel">
+            <div class="tape-mini"></div>
+            <p class="note-text handwritten">"good night messages"</p>
+          </div>
+
+          <div class="mosaic-note note-5 reveal-item tactile-peel">
+            <div class="pin-mini wiggle-pin"></div>
+            <p class="note-text handwritten">"taking random photos"</p>
+          </div>
+
+          <div class="mosaic-note note-6 reveal-item tactile-peel">
+            <div class="tape-mini"></div>
+            <p class="note-text handwritten">"annoying each other"</p>
+          </div>
+
+          <div class="mosaic-note note-7 reveal-item tactile-peel">
+            <div class="tape-mini"></div>
+            <p class="note-text handwritten">"your dramatic reactions 😂"</p>
+          </div>
+
+          <div class="mosaic-note note-8 reveal-item tactile-peel">
+            <div class="pin-mini wiggle-pin"></div>
+            <p class="note-text handwritten">"my terrible sleep schedule 🫠"</p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           SECTION 10: COMMITMENT & DEDICATED PINKY PROMISE SEAL
+           ================================================================ -->
+      <section class="scrapbook-section section-commitment reveal-item" id="section-commitment" aria-label="My commitment">
+        <div class="commitment-card paper-sheet elevation-paper">
+          <div class="washi-tape tape-top-center"></div>
+
+          <div class="brushstroke-title-wrapper">
+            <div class="brushstroke-bg-sage"></div>
+            <h2 class="section-heading serif-heading">I'll do better.</h2>
+          </div>
+
+          <div class="commitment-subheading">
+            <p class="handwritten-large">Not perfect.</p>
+            <p class="handwritten-large emphasis-highlight">Just better.</p>
+          </div>
+
+          <ul class="commitments-list" id="commitments-list">
+            <li class="commitment-item reveal-item interactive-check-item">
+              <span class="item-check animated-checkmark">✓</span>
+              <span class="item-text">I'll listen before reacting.</span>
+            </li>
+            <li class="commitment-item reveal-item interactive-check-item">
+              <span class="item-check animated-checkmark">✓</span>
+              <span class="item-text">I'll step away when I'm too angry instead of letting it come out on you.</span>
+            </li>
+            <li class="commitment-item reveal-item interactive-check-item">
+              <span class="item-check animated-checkmark">✓</span>
+              <span class="item-text">I'll tell you when something hurts instead of letting silence do the talking.</span>
+            </li>
+            <li class="commitment-item reveal-item interactive-check-item">
+              <span class="item-check animated-checkmark">✓</span>
+              <span class="item-text">I'll give you space without making you feel abandoned.</span>
+            </li>
+            <li class="commitment-item reveal-item interactive-check-item">
+              <span class="item-check animated-checkmark">✓</span>
+              <span class="item-text">And I'll try to remember that there's a human being on the other side of my words too.</span>
+            </li>
+          </ul>
+
+          <!-- DEDICATED PINKY PROMISE SEAL CARD -->
+          <div class="promise-seal-card paper-sheet-subtle reveal-item" id="promise-seal-card">
+            <div class="pin-mini wiggle-pin"></div>
+            <div class="brushstroke-title-wrapper">
+              <div class="brushstroke-bg-blush"></div>
+              <h3 class="signature-title handwritten" style="font-size: 1.85rem;">A Promise to Protect Your Peace</h3>
+            </div>
+
+            <p class="paragraph promise-lead-text">
+              I know shouting brings back painful memories from your childhood.<br>
+              <strong>This is my permanent promise to you:</strong> whenever things get tense or overwhelming, I will pause, step away, lower my voice, and protect your comfort and safety before anything else.
+            </p>
+
+            <!-- Interactive Wax Seal Button -->
+            <div class="interactive-seal-container">
+              <button type="button" class="btn-pinky-seal" id="btn-pinky-seal" aria-label="Seal the pinky promise">
+                <div class="pinky-wax-stamp" id="pinky-wax-stamp">
+                  <span class="pinky-icon">🤙</span>
+                  <span class="pinky-heart">♡</span>
+                </div>
+                <span class="seal-prompt-text handwritten" id="seal-prompt-text">tap to seal the promise</span>
+              </button>
+              <div class="seal-confirmation-text hidden handwritten" id="seal-confirmation-text">
+                ✨ sealed with care • jaguu ✨
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           SECTION 11: FINAL SCENE & P.S. & JAGUU SIGNOFF
+           ================================================================ -->
+      <section class="scrapbook-section section-final reveal-item" id="section-final" aria-label="Final message and thoughts">
+        <div class="final-card-centered paper-sheet">
+          <div class="washi-tape tape-top-center"></div>
+
+          <div class="final-message-body">
+            <p class="final-opening-line">So yeah...</p>
+            
+            <div class="brushstroke-title-wrapper">
+              <div class="brushstroke-bg-blush"></div>
+              <p class="final-sorry-line serif-heading">I'm really sorry.</p>
+            </div>
+
+            <p class="final-statement">You deserved better from me that day.</p>
+            
+            <p class="paragraph final-nuance">
+              Not because I want you to forget what happened.<br>
+              Not because I expect you to forgive me immediately.<br>
+              Just because you deserved better from me.
+            </p>
+
+            <div class="final-gratitude-box pulse-gratitude">
+              <p class="gratitude-text">And thank you. For listening. For letting me understand you a little more. For being you. 🫂</p>
+            </div>
+
+            <p class="take-care-note serif-heading">
+              Take care of that little heart of yours, okay?
+            </p>
+          </div>
+
+          <!-- P.S. Post-It Note -->
+          <div class="ps-sticky-note reveal-item peel-hover-postit">
+            <div class="tape-mini-gold"></div>
+            <p class="ps-header handwritten">P.S.</p>
+            <p class="ps-content handwritten">
+              I'm still probably going to randomly fall asleep while watching YouTube.
+              
+            </p>
+    
+            <p class="ps-content handwritten">
+              and still a bit slow to understand things sometimes while reading messages surry.
+              
+            </p>
+            <p class="ps-punchline handwritten">
+              That problem may require professional intervention. 🫠
+            </p>
+            <div class="ps-flower-mini">
+              <span class="tiny-tulip-wiggle">🌷</span>
+              <span class="handwritten ps-bye">okay bye.</span>
+            </div>
+          </div>
+
+          <!-- HIDDEN INTERACTIVE EASTER EGG -->
+          <div class="easter-egg-container">
+            <button type="button" class="btn-easter-egg pulse-egg-btn" id="btn-easter-egg" aria-label="A tiny secret note">
+              <span class="egg-flower">🌸</span>
+              <span class="egg-label handwritten">wait...</span>
+            </button>
+          </div>
+
+          <!-- Footer Signoff with jaguu -->
+          <footer class="scrapbook-footer">
+            <p class="footer-signoff handwritten">written late at night, just for you.-jaguu</p>
+          </footer>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ====================================================================
+       SECRET EASTER EGG MODAL
+       ==================================================================== -->
+  <div class="easter-egg-modal" id="easter-egg-modal" aria-hidden="true" role="dialog">
+    <div class="egg-modal-backdrop" id="egg-modal-backdrop"></div>
+    <div class="egg-modal-content paper-sheet modal-pop-scale">
+      <button type="button" class="btn-close-egg" id="btn-close-egg" aria-label="Close note">✕</button>
+      <div class="egg-floral-header">🌷 🌻 🤍 🌸</div>
+      <h3 class="egg-title serif-heading">one last thing...</h3>
+      <p class="egg-body handwritten">
+        "I just wanted to make something that felt like you.<br>
+        Soft, warm, sincere... and a little bit of my nonsense.<br><br>
+        That's it.<br>
+        hope you like it ik im not enough or important but for me you are. 🫂"
+      </p>
+      <div class="egg-footer-signature">
+        <span class="handwritten-mini">always here.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       FLOATING BOTANICAL MUSIC PLAYER (AUTO-PLAY ON OPEN)
+       ==================================================================== -->
+  <aside class="floating-music-player" id="floating-music-player" aria-label="Music Player">
+    <audio id="bg-audio" preload="auto">
+      <source src="assets/audio/WhatsApp Audio 2026-08-26 at 11.02.20 PM.mpeg" type="audio/mpeg">
+      <source src="assets/audio/song.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="player-pill" id="player-pill">
+      
+      <button type="button" class="btn-player-toggle" id="btn-player-toggle" aria-label="Play song">
+        <svg class="icon-play" id="icon-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <polygon points="6 3 20 12 6 21 6 3"></polygon>
+        </svg>
+        <svg class="icon-pause hidden" id="icon-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <rect x="5" y="4" width="4" height="16" rx="1"></rect>
+          <rect x="15" y="4" width="4" height="16" rx="1"></rect>
+        </svg>
+      </button>
+
+      <div class="player-info" id="player-info">
+        <div class="player-title-row">
+          <span class="music-flower-icon">🌷</span>
+          <span class="song-title" id="song-title">Our Song ♡</span>
+          <div class="equalizer-bars" id="equalizer-bars" aria-hidden="true">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+            <span class="bar bar-4"></span>
+          </div>
+        </div>
+
+        <div class="player-timeline">
+          <span class="time-current" id="time-current">0:00</span>
+          <div class="slider-container">
+            <input 
+              type="range" 
+              class="progress-slider" 
+              id="progress-slider" 
+              min="0" 
+              max="100" 
+              value="0" 
+              aria-label="Track progress slider"
+            />
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+          </div>
+          <span class="time-duration" id="time-duration">--:--</span>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- JavaScript Scripts -->
+  <script src="scripts/player.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

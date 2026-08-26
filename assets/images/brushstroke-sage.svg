@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 90" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="sageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e4efe2" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#cbe0c7" stop-opacity="0.9"/>
+      <stop offset="75%" stop-color="#b1ccad" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#95b590" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="sageLayer2" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#d6ead2" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#b9d6b4" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#a0c29b" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+  <!-- Main broad sage watercolor brush stroke -->
+  <path d="M 18 50 C 40 26, 95 18, 170 24 C 240 28, 315 16, 368 30 C 390 35, 396 46, 378 58 C 355 72, 285 66, 215 62 C 135 58, 60 72, 22 65 C 6 60, 2 54, 18 50 Z" fill="url(#sageGradient)"/>
+  <!-- Secondary texture layer -->
+  <path d="M 35 44 C 80 32, 160 30, 245 34 C 315 37, 362 32, 370 46 C 348 56, 275 50, 195 52 C 115 54, 52 56, 35 44 Z" fill="url(#sageLayer2)"/>
+  <path d="M 10 48 C 20 38, 48 44, 58 54 C 44 60, 16 58, 10 48 Z" fill="#cbe0c7" opacity="0.6"/>
+</svg>

@@ -1,0 +1,363 @@
+/* ==========================================================================
+   ENVELOPE.CSS - Watercolor Botanical Opening Envelope Screen & Canvas Burst
+   ========================================================================== */
+
+.envelope-screen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-frame-pink);
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(255, 255, 255, 0.22) 80px,
+      rgba(255, 255, 255, 0.22) 160px
+    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+.envelope-screen.opened {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Burst Canvas for Petals and Golden Stardust */
+.burst-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.envelope-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 440px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+/* --- Hero Blooming Tulip Above Envelope --- */
+.opening-tulip-hero {
+  width: 80px;
+  height: 115px;
+  margin-bottom: -18px;
+  z-index: 15;
+  filter: drop-shadow(0 6px 14px rgba(232, 139, 136, 0.3));
+  animation: gentleSway 5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.hero-tulip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes gentleSway {
+  0% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
+/* --- 3D Envelope Construction --- */
+.envelope-card {
+  position: relative;
+  width: 320px;
+  height: 210px;
+  background: #fcf4ec;
+  border-radius: 8px;
+  box-shadow: 
+    0 18px 40px -5px rgba(184, 107, 126, 0.28),
+    0 6px 16px rgba(184, 107, 126, 0.12);
+  perspective: 900px;
+  transform-style: preserve-3d;
+  margin-bottom: 2.2rem;
+  transition: transform 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.envelope-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Envelope Back Background */
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #f7e6d7;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* The Letter Sheet Inside that Slides Up */
+.envelope-letter {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 10px;
+  height: 190px;
+  background: #FFFDF9;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #f2e4d8;
+  transform: translateY(0);
+  transition: transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) 0.35s, opacity 0.5s ease;
+}
+
+.envelope-card.open .envelope-letter {
+  transform: translateY(-130px) scale(1.02);
+  z-index: 6;
+  box-shadow: 0 16px 32px rgba(184, 107, 126, 0.25);
+}
+
+.letter-stamp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px dashed var(--border-paper);
+  padding-bottom: 0.4rem;
+}
+
+.letter-peek-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-body);
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+.handwritten-mini {
+  font-family: var(--font-handwritten);
+  font-size: 1.3rem;
+  color: var(--accent-blush-rose);
+}
+
+.letter-fold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.06), transparent);
+}
+
+/* Left & Right Envelope Pockets */
+.envelope-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 105px 0 105px 160px;
+  border-color: transparent transparent transparent #faeee1;
+  z-index: 3;
+  border-bottom-left-radius: 8px;
+  pointer-events: none;
+}
+
+.envelope-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 105px 160px 105px 0;
+  border-color: transparent #f5e4d3 transparent transparent;
+  z-index: 3;
+  border-bottom-right-radius: 8px;
+  pointer-events: none;
+}
+
+/* Bottom Envelope Pocket */
+.envelope-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 160px 120px 160px;
+  border-color: transparent transparent #eedcc8 transparent;
+  z-index: 4;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  pointer-events: none;
+}
+
+/* Top Envelope Flap (Flippable) */
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 130px 160px 0 160px;
+  border-color: #ebd3bc transparent transparent transparent;
+  transform-origin: top center;
+  transform: rotateX(0deg);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 5;
+  cursor: pointer;
+}
+
+.envelope-card.open .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+/* Wax Seal with Heart */
+.wax-seal {
+  position: absolute;
+  top: -140px;
+  left: -24px;
+  width: 48px;
+  height: 48px;
+  background: radial-gradient(circle at 35% 35%, #bf5954, #8b3430 85%);
+  border-radius: 50%;
+  box-shadow: 
+    0 4px 10px rgba(94, 25, 22, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1.5px solid rgba(139, 52, 48, 0.6);
+}
+
+.envelope-flap:hover .wax-seal {
+  transform: scale(1.08);
+}
+
+.wax-heart {
+  color: #f7deda;
+  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  line-height: 1;
+}
+
+/* --- Envelope Details & Actions --- */
+.envelope-details {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.envelope-title {
+  font-family: var(--font-handwritten);
+  font-size: 2.85rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.1;
+}
+
+.envelope-title .heart-symbol {
+  color: var(--accent-blush-rose);
+  font-weight: 400;
+  font-family: var(--font-serif);
+  display: inline-block;
+  transform: translateY(-2px);
+}
+
+.envelope-subtitle {
+  font-family: var(--font-serif-alt);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--ink-muted);
+}
+
+/* Come In Button */
+.btn-open-envelope {
+  margin-top: 0.75rem;
+  background: var(--ink-primary);
+  color: #FFFDF9;
+  border: none;
+  padding: 0.78rem 2.4rem;
+  border-radius: 40px;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(51, 43, 43, 0.2);
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-open-envelope:hover,
+.btn-open-envelope:focus-visible {
+  background: #4d3e40;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(51, 43, 43, 0.28);
+  outline: none;
+}
+
+.btn-open-envelope:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .envelope-card {
+    width: 270px;
+    height: 178px;
+    margin-bottom: 1.75rem;
+  }
+  .envelope-letter {
+    height: 160px;
+    left: 10px;
+    right: 10px;
+    top: 8px;
+  }
+  .envelope-card.open .envelope-letter {
+    transform: translateY(-105px) scale(1.02);
+  }
+  .envelope-left {
+    border-width: 89px 0 89px 135px;
+  }
+  .envelope-right {
+    border-width: 89px 135px 89px 0;
+  }
+  .envelope-bottom {
+    border-width: 0 135px 100px 135px;
+  }
+  .envelope-flap {
+    border-width: 110px 135px 0 135px;
+  }
+  .wax-seal {
+    top: -120px;
+    width: 42px;
+    height: 42px;
+    left: -21px;
+  }
+  .envelope-title {
+    font-size: 2.35rem;
+  }
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 90" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="blushGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdd7d0" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#f8bab0" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#f29f92" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#ea8778" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="blushLayer2" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#fad0c8" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#f7ada1" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#f09385" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+  <!-- Main broad painterly watercolor brush stroke -->
+  <path d="M 15 48 C 35 24, 90 18, 160 22 C 230 26, 310 16, 365 28 C 388 33, 395 44, 380 56 C 360 72, 290 68, 220 64 C 140 60, 65 74, 25 66 C 8 62, 2 54, 15 48 Z" fill="url(#blushGradient)"/>
+  <!-- Secondary texture layer for authentic watercolor depth -->
+  <path d="M 30 42 C 75 30, 155 28, 240 32 C 310 35, 360 30, 370 44 C 350 56, 280 50, 200 52 C 120 54, 55 58, 30 42 Z" fill="url(#blushLayer2)"/>
+  <path d="M 8 46 C 18 36, 45 42, 55 52 C 42 58, 15 56, 8 46 Z" fill="#f8c3ba" opacity="0.6"/>
+  <path d="M 360 34 C 380 32, 392 42, 382 50 C 370 54, 355 42, 360 34 Z" fill="#f29f92" opacity="0.6"/>
+</svg>

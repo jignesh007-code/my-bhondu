@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 90" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="peachGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fce9d8" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#f7d5b8" stop-opacity="0.9"/>
+      <stop offset="75%" stop-color="#efbe96" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#e2a574" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="peachLayer2" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#fae0cb" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#f3c9a6" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#e8b186" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+  <!-- Main broad peach watercolor brush stroke -->
+  <path d="M 16 48 C 38 25, 92 18, 165 22 C 235 26, 312 16, 366 28 C 388 34, 395 45, 379 56 C 358 70, 288 66, 218 62 C 138 58, 62 72, 24 65 C 7 60, 2 54, 16 48 Z" fill="url(#peachGradient)"/>
+  <path d="M 32 42 C 78 30, 158 28, 242 32 C 312 35, 360 30, 368 44 C 348 56, 278 50, 198 52 C 118 54, 54 56, 32 42 Z" fill="url(#peachLayer2)"/>
+</svg>
